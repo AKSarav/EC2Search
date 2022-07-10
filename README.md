@@ -6,5 +6,5 @@ CLI tool to help you search EC2 instances with AWS CLI
 
 Download the right binary or download the source code or build it by running the following command
 
-```go build .```
+
 
