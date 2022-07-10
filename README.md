@@ -1,6 +1,23 @@
 # EC2Search
-CLI tool to help you search EC2 instances with AWS CLI
+CLI tool to help you search EC2 instances with AWS CLI.
 
+Do not have to keep framing the commands with AWSCLI everytime
+
+just type
+
+`ec2search <searchstring>`
+
+If you want to search the server in specific AWS CLI named profiles,
+
+`ec2search <searchstring> <profilename>`
+
+Thats all. Give it a try.
+
+A Handy tool for AWS Cloud Engineers, SREs, DevOps Engineers.
+
+
+
+![alt text](https://github.com/AKSarav/EC2Search/blob/master/screenshots/Screenshot%202022-07-11%20at%203.31.23%20AM.png?raw=true)
 
 ## Caveats
 
