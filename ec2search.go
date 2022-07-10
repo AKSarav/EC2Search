@@ -30,7 +30,7 @@ func main() {
 	if len(argsWithoutProg) == 2 {
 
 		stscmd := exec.Command("aws", "sts", "get-caller-identity", "--output", "json", "--profile", argsWithoutProg[1])
-	    stsout, errsts = stscmd.Output()
+		stsout, errsts = stscmd.Output()
 
 		cmd := exec.Command("aws", "ec2", "describe-instances", "--query", "Reservations[*].Instances[*].{PublicIP:PublicIpAddress,PrivateIP:PrivateIpAddress,Name:Tags[?Key=='Name'].Value|[0],Status:State.Name,VpcId:VpcId,InstanceID:InstanceId,InstanceType:InstanceType}", "--filters", "Name=instance-state-name,Values=running", "Name=tag:Name,Values=*"+argsWithoutProg[0]+"*", "--profile", argsWithoutProg[1], "--output", "table")
 		stdout, err2 = cmd.Output()
@@ -44,21 +44,19 @@ func main() {
 		stdout, err1 = cmd.Output()
 
 		stscmd := exec.Command("aws", "sts", "get-caller-identity", "--output", "json")
-	    stsout, errsts = stscmd.Output()
+		stsout, errsts = stscmd.Output()
 
 		if err1 != nil {
 			log.Fatal(err1)
 		}
 	}
 
-	
-
 	if errsts != nil {
 		log.Fatal(errsts)
 	}
 
 	fmt.Println("# EC2Search")
-	fmt.Println("# https://gritfy.com/ec2search")
+	fmt.Println("# https://github.com/AKSarav/EC2Search")
 
 	type stsobj struct {
 		UserID  string `json:"UserId"`
