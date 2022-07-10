@@ -9,6 +9,7 @@ CLI tool to help you search EC2 instances with AWS CLI
 3. try some simple commands like `aws ec2 describe-instances` to verify that you have necassary permissions to list the instances.
 4. If you have the named profiles you can pass it as an option to search for the instance using specific profile ( otherwise default would be taken)
 5. EC2 Search uses the aws cli tool, its just a wrapper, EC2 Search does not directly connect to AWS or use your security credentials anyway.
+6. Search String and AWS CLI profile name is Case sensitive
 
 
 
